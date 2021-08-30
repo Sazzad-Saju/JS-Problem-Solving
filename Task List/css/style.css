@@ -2,9 +2,9 @@
     margin: 0;
 }
 
-main {
+body {
     background-image: linear-gradient(to bottom, rgb(26, 211, 195), rgb(146, 211, 219));
-    height: 100%;
+    background-attachment: fixed;
 }
 
 header {
