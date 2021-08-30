@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+}
+
+main {
+    background-image: linear-gradient(to bottom, rgb(26, 211, 195), rgb(146, 211, 219));
+    height: 100%;
+}
+
+header {
+    display: flex;
+    padding-top: 50px;
+}
+
+#sub_btn,
+#clear_task {
+    margin: 15px;
+    background-color: rgb(13, 181, 223);
+}
+
+a {
+    color: darkcyan
+}
