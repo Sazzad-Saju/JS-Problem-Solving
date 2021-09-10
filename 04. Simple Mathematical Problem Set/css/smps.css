@@ -1,0 +1,145 @@
+/* sum of series  */
+
+.prob-sec-od {
+    background-color: lightgray;
+}
+
+.prob-sec-head {
+    background-color: cornsilk;
+    display: inline-block;
+}
+
+.prob-sec-eve {
+    /* background-color: darkgray; */
+    background-color: dimgray;
+    color: white;
+}
+
+.head {
+    color: darkred;
+}
+
+p,
+span,
+.big-txt {
+    font-size: 1.5rem;
+}
+
+
+/* Factorial Calculation */
+
+.fact-box {
+    background-color: #F0F0F0;
+    color: black;
+}
+
+.fact-box-head {
+    background-color: #B64B39;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #c7c7c7;
+    border: 1px solid black;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 1
+}
+
+#factRes {
+    width: 100%;
+}
+
+
+/* check values of PI  */
+
+.inpSec input {
+    width: 60px;
+    padding: 7px;
+    font-size: 1.4rem;
+}
+
+.correct {
+    border: 2px solid green;
+    color: green;
+}
+
+.wrong {
+    border: 2px solid red;
+    color: red;
+}
+
+.wrong:focus {
+    outline: none;
+    border: 2px solid red;
+    color: red;
+}
+
+.neutral {
+    border: 2px solid black;
+    color: black;
+}
+
+#totalMiss {
+    color: brown;
+    font-weight: bold;
+}
+
+
+/* random and pseudorandom number generator  */
+
+.rng-box {
+    background-color: #CCCCFF;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.rng-body {
+    background-color: #F0F0F0;
+    color: dimgrey;
+    border: 4px solid #CCCCFF;
+    outline: none;
+}
+
+.smallInp {
+    width: 200px;
+    font-size: 1.4rem;
+    margin-left: 20px;
+}
+
+.rng-res {
+    background-color: #CCCCFF;
+    line-height: 23px;
+}
+
+small {
+    display: block;
+    font-size: 16px;
+}
+
+.danger {
+    background-color: #d9534f;
+    line-height: 23px;
+    color: #F0F0F0;
+}
+
+.spinArea {
+    margin-top: 34px;
+    margin-bottom: 35px;
+}
+
+
+/* .pseuBox {
+    margin-top: 30px;
+    margin-bottom: 10px;
+} */

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Mathematical Problem Set</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/smps.css">
+</head>
+
+<body>
+    <div class="container-fluid prob-sec-head">
+        <h1 class="text-center head py-4">Simple Mathematical Problem Set</h1>
+    </div>
+    <!-- sum of series -->
+    <div class="container-fluid prob-sec-od">
+        <div class="container">
+            <h3 class="py-3">Exercise 01: Sum of Square Series</h3>
+            <div class="row form-group">
+                <div class="col-md-4 mb-3">
+                    <p>Enter the Number of terms: </p>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <input type="text" class="form-control" id="input">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <button class="btn btn-primary" id="goButt">GO</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="SoS"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Factorial Calculator  -->
+    <div class="container-fluid prob-sec-eve pb-4">
+        <div class="container">
+            <h3 class="py-3">Exercise 02: Factorials Calculator</h3>
+            <div class="row form-group d-flex justify-content-center text-center">
+                <div class="col-md-4 py-2 rounded fact-box">
+                    <div class="rounded big-txt fact-box-head"> Factorials Calculator</div>
+                    <p>
+                        n! = ?
+                    </p>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6 mw-2">
+                            <p>
+                                n =
+                                <input type="number" placeholder=" n" min="0" max="999" id="factInp">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="btn button" id="factClear" style="float:left">Clear</span>
+                            <span class="btn button" id="factCal" style="float: right;">Calculate</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <textarea name="" id="factRes" rows="4" class="mt-3 mb-4" readonly placeholder=" Answer: "></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            @2021-Sazzad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Check values of PI -->
+    <div class="container-fluid prob-sec-od">
+        <div class="container">
+            <h3 class="py-3">Exercise 03: Put Values of PI that You Know</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="inpSec row form-group">
+                        <div class="text-center mb-4">
+                            <button class="btn btn-lg button" id="piSec">Click to Type</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- random and Pseudorandom number generator  -->
+    <div class="container-fluid prob-sec-eve pb-4">
+        <div class="container">
+            <h3 class="py-3">Exercise 04: Random and Pseudorandom Number Generator</h3>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4 mx-auto my-3">
+                    <div class="row rng-box">
+                        <div class="col">
+                            <div class="big-txt">
+                                <i>Ultimate Random Number Generator</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rng-body">
+                        <div class="row">
+                            <div class="col mt-4">
+                                <p>
+                                    <i>Min:</i>
+                                    <input type="number" class="smallInp" value="1">
+                                </p>
+                                <p> <i>Max: </i>
+                                    <input type="number" class="smallInp" value="100">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn button" id="rndGen">Generate</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col big-txt">
+                                <i>Result:</i>
+                            </div>
+                        </div>
+                        <div class="row m-auto">
+                            <div class="col big-txt text-center mb-4 pt-2" id="Random-result">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto my-3">
+                    <div class="row rng-box">
+                        <div class="col">
+                            <div class="big-txt">
+                                <i>Pseudorandom Number Generator</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rng-body">
+                        <div class="row">
+                            <div class="col mt-4">
+                                <p>
+                                    <i>Seed:</i>
+                                    <input type="number" class="smallInp" placeholder=" n">
+                                </p>
+                                <p>
+                                    <i>Max: </i>
+                                    <input type="number" class="smallInp" value="100">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn button" id="pseuGen">Generate</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col big-txt">
+                                <i>Result:</i>
+                            </div>
+                        </div>
+                        <div class="row m-auto">
+                            <div class="col big-txt text-center mb-4 pt-2" id="pseu-result">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/smps.js"></script>
+</body>
+
+</html>
