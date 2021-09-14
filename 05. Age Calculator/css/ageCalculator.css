@@ -1,0 +1,47 @@
+.ageCalBox h2 {
+    background-color: #336699;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.ageCalBody {
+    background-color: #EEEEEE;
+    padding: 15px;
+    text-align: center;
+}
+
+#inDob {
+    width: 140px;
+}
+
+#openCal i {
+    color: #336699;
+    transition: transform .3s ease-in-out;
+}
+
+#openCal i:hover {
+    transform: rotate(60deg);
+}
+
+.center {
+    text-align: center;
+}
+
+.ageState {
+    font-family: 'Akaya Telivigala', cursive;
+    width: 50%;
+    margin: auto;
+}
+
+.asmFont {
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+#result-sec {
+    display: none;
+}
+
+.foot-note {
+    float: right !important;
+}
