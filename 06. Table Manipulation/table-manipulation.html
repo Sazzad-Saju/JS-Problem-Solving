@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Manipulation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/table-manipulation.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/e97b225049.js"></script>
+    <link href="/modal.html" rel="import" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <br>
+        <div class="container pt-5">
+            <h2 class="me-3 title">Total User List</h2> <span class="btn btn-dark me-2" id="addUser" data-bs-toggle="modal" data-bs-target="#edit">ADD User</span>
+            <br><br>
+            <table class="table table-striped" id="mytbl">
+                <thead class="bg-success">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Role</th>
+                    <th scope="col" class="addPaddAction">Action</th>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+            <br>
+            <footer class="text-muted foot-note text-center">Sazzad-Saju &copy; 2021</footer>
+            <br>
+        </div>
+    </div>
+    <!-- modal here -->
+    <div class="secondHTML">
+
+    </div>
+
+    <script src="js/table-manipulation.js"></script>
+</body>
+
+</html>

@@ -67,7 +67,6 @@ function openCalendar() {
 
 function hide_modal() {
     $('#calModal').modal('hide');
-
 }
 
 // Calculate Age

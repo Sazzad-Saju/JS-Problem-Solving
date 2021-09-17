@@ -1,0 +1,36 @@
+body {
+    background-color: cornsilk;
+}
+
+.title {
+    display: inline;
+}
+
+.form-label {
+    margin-left: 20px;
+}
+
+#cancelButt {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#saveButt {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.modTitle {
+    padding-left: 20px;
+}
+
+table {
+    word-break: break-word;
+    table-layout: fixed;
+}
+
+@media only screen and (min-width: 600px) {
+    .addPaddAction {
+        padding-left: 7%!important;
+    }
+}
