@@ -1,3 +1,8 @@
+// load modal
+$(function() {
+    $(".secondHTML").load("modal.html");
+});
+
 // ***   ***    ***
 // sum of square series
 document.getElementById('goButt').addEventListener('click', sumOfSeris);
@@ -67,7 +72,7 @@ function openPiSec(e) {
         insertionSec.innerHTML = `
                     <div class="col my-4 text-center" id="insertedSec">
                 `
-        for (i = 0; i < 173; i++) {
+        for (i = 0; i < 175; i++) {
             insertionSec.innerHTML += `
                     <input type="text" maxlength="1" class="text-center mx-3 mb-2 rounded">
                     `
@@ -107,8 +112,8 @@ container.onkeyup = function(e) {
                 if (PiVal[ind] == target.value) {
                     // target.classList.add("correct");
                     target.className = "text-center mx-3 mb-2 rounded correct";
-                    next.focus();
                     ind++;
+                    next.focus();
                     break;
                 } else {
                     // target.classList.add("wrong");
@@ -122,6 +127,7 @@ container.onkeyup = function(e) {
                 }
             }
         }
+        //CANNOT Evaluate Last Input//
     }
     // Move to previous field if empty (user pressed backspace)
     else if (myLength === 0) {
@@ -135,7 +141,6 @@ container.onkeyup = function(e) {
                     target.classList.add("neutral");
                     // target.className("text-center mx-3 mb-2 rounded neutral");
                     ind--;
-                    console.log(ind);
                     break;
                 }
             }
@@ -251,3 +256,84 @@ function pseurandGen(e) {
         }
     }, 500);
 }
+
+// regular expression
+document.querySelector('#newAC').addEventListener('click', function() {
+    var nameCheck, postalCheck, emailCheck, passCheck, phoneCheck;
+    document.getElementById('inName').addEventListener('input', function(e) {
+        // console.log(e.target.value);
+        re1 = /^([^0-9]*)$/
+        re2 = /(.*[a-z]){3}/i
+        str = e.target.value;
+        if (re1.test(str) == true && re2.test(str) == true) {
+            // console.log('true');
+            nameCheck = true;
+            e.target.className = "form-control correct";
+            document.getElementById('nameErr').setAttribute("style", "display:none");
+
+        } else {
+            // console.log('false');
+            e.target.className = "form-control wrong";
+            document.getElementById('nameErr').setAttribute("style", "display:block");
+        }
+    })
+    document.getElementById('inPostal').addEventListener('input', function(e) {
+        re = /^[0-9]{4}$/;
+        str = e.target.value;
+        if (re.test(str) == true) {
+            postalCheck = true;
+            e.target.className = "form-control correct";
+            document.getElementById('postalErr').setAttribute("style", "display:none");
+
+        } else {
+            e.target.className = "form-control wrong";
+            document.getElementById('postalErr').setAttribute("style", "display:block");
+        }
+    })
+    document.getElementById('inEmail').addEventListener('input', function(e) {
+        re = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+        str = e.target.value;
+        if (re.test(str) == true) {
+            emailCheck = true;
+            e.target.className = "form-control correct";
+            document.getElementById('emailErr').setAttribute("style", "display:none");
+
+        } else {
+            e.target.className = "form-control wrong";
+            document.getElementById('emailErr').setAttribute("style", "display:block");
+        }
+    })
+    document.getElementById('inPass').addEventListener('input', function(e) {
+        re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/
+        str = e.target.value;
+        if (re.test(str) == true) {
+            passCheck = true;
+            e.target.className = "form-control correct";
+            document.getElementById('passErr').setAttribute("style", "display:none");
+
+        } else {
+            e.target.className = "form-control wrong";
+            document.getElementById('passErr').setAttribute("style", "display:block");
+        }
+    })
+    document.getElementById('inPhone').addEventListener('input', function(e) {
+        re = /^(\+)?(88)?01[0-9]{9}$/;
+        str = e.target.value;
+        if (re.test(str) == true) {
+            phoneCheck = true;
+            e.target.className = "form-control correct";
+            document.getElementById('phoneErr').setAttribute("style", "display:none");
+
+        } else {
+            e.target.className = "form-control wrong";
+            document.getElementById('phoneErr').setAttribute("style", "display:block");
+        }
+    })
+    document.getElementById('signupButt').addEventListener('click', function() {
+        if (nameCheck == true && postalCheck == true && emailCheck == true && passCheck == true && phoneCheck == true) {
+            alert("You are elegible to open an account!");
+        } else {
+            alert("Please input correct information to procced!");
+        }
+    })
+})

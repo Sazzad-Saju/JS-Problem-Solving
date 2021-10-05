@@ -143,3 +143,24 @@ small {
     margin-top: 30px;
     margin-bottom: 10px;
 } */
+
+
+/* modal  */
+
+#mod_terms {
+    text-align: justify;
+    font-size: 0.70rem;
+}
+
+#mod_terms span {
+    font-size: 0.70rem;
+    color: cornflowerblue;
+}
+
+#nameErr,
+#postalErr,
+#emailErr,
+#passErr,
+#phoneErr {
+    display: none;
+}

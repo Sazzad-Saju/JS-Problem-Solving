@@ -1,0 +1,55 @@
+<body>
+    <div class="modal fade" id="edit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-block">
+                    <div class="d-flex">
+                        <h2 class="text-center">Sign Up</h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <small class="text-muted">It's quick and easy</small>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        <div class="row my-2">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Name" id="inName">
+                                <small class="text-danger" id="nameErr"> Name must have 3 characters and No number</small>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Postal Code" maxlength="4" id="inPostal">
+                                <small class="text-danger" id="postalErr">Invalid! ex-2300</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Email" id="inEmail">
+                                <small class="text-danger" id="emailErr">Invalid Email Address</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col">
+                                <input type="password" class="form-control" placeholder="Password" id="inPass">
+                                <small class="text-danger" id="passErr">Minimum 8 character including an alphabet, a digit and or a special character</small>
+                            </div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Phone" id="inPhone">
+                                <small class="text-danger" id="phoneErr">Invalid phone number! ex- +8801XXXXXXXXX </small>
+                            </div>
+                        </div>
+
+
+                        <div class="row my-3">
+                            <div class="col text-center">
+                                <small id="mod_terms" class="text-muted">By clicking Sign Up, you agree to our <span>Terms, Data Policy</span> and <span>Cookie Policy</span>. You may receive SMS notifications from us and can opt out at any time.</small>
+                                <button class="btn btn-success mt-3" id="signupButt">Sign Up</button>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
