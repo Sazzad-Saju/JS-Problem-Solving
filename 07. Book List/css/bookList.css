@@ -1,0 +1,37 @@
+.success,
+.error {
+    color: white;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+}
+
+.success {
+    background: seagreen;
+}
+
+.error {
+    background: tomato;
+}
+
+.text-center {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.pad {
+    padding-top: 3.5rem;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: darkgray;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    background-color: darkgray;
+    color: white;
+}

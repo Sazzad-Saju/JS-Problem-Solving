@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/bookList.css">
+    <title>Book List</title>
+</head>
+
+<body>
+    <div class="container pad">
+        <div class="header">
+            <h2>Book List</h2>
+        </div>
+        <h4 class="text-center">Add a Book</h4>
+        <form id="books_form">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" class="u-full-width">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" id="author" class="u-full-width">
+            </div>
+            <div>
+                <label for="isbn">ISBN#</label>
+                <input type="text" id="isbn" class="u-full-width">
+            </div>
+            <br>
+            <div>
+                <input type="submit" value="Submit" class="u-full-width button-primary">
+            </div>
+        </form>
+        <hr>
+        <div class="header">
+            <h4>All Books</h4>
+        </div>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th id="child">Title</th>
+                    <th>Author</th>
+                    <th>ISBN#</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="books_list">
+
+            </tbody>
+        </table>
+        <div class="footer">
+            <footer>Sazzad-Saju &copy; 2021</footer>
+        </div>
+    </div>
+    <script src="js/bookList.js"></script>
+</body>
+
+</html>
