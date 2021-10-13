@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS06-ES6</title>
+</head>
+
+<body>
+    <script>
+        // global scope
+        console.log(`* Exception in different scope: `);
+        var a = 1;
+        let b = 2;
+        const c = 3;
+        console.log(`Global Scope: `, a, b, c);
+        if (true) {
+            var a = 7; //exception
+            let b = 8;
+            const c = 9;
+            console.log(`if scope`, a, b, c);
+        }
+        console.log(`Global scope`, a, b, c);
+
+        for (var a = 0; a < 10; a++) {
+            // a also increasing in GS
+        }
+        console.log(`Global scope after for loop: `, a, b, c);
+
+        // function
+        console.log(`* Different functions: `)
+
+        function hello1() {
+            console.log("General Function");
+        }
+        // arrow function
+        let hello2 = () => {
+            console.log("Arrow Function with no Arg");
+        }
+
+        let hello3 = name => console.log(`Arrow function with '${name}' `);
+
+        hello1();
+        hello2();
+        hello3("Arg");
+
+        // Both of bellow are same 
+        let getSquare1 = num => {
+            return num * num;
+        }
+        console.log(`Arrow fun-1 returns square of 4 = ${getSquare1(4)}`);
+        let getSquare2 = num => num * num;
+        console.log(`Arrow fun-2 returns square of 4 = ${getSquare2(4)}`);
+        // console.log(getSquare2(4));
+
+        // call back function
+        console.log(`* Callback function: `);
+        console.log(`Callback function type-1: `);
+        numbers = [1, 2, 3, 4, 5];
+        numbers.forEach(function(item) {
+            console.log(item);
+        });
+        console.log(`Callback function type-2: `);
+        let printItem1 = (item) => {
+            console.log(item);
+        }
+        numbers.forEach(printItem1);
+
+        // map 
+        console.log(`* Call with Map`)
+        console.log(`Call with map type-1: `)
+        let squareNum = numbers.map(function(item) {
+            return item * item;
+        });
+        console.log(squareNum);
+
+        // declare call back outside
+        console.log(`call with map type-2`)
+
+        function squareAll(item) {
+            return item * item;
+        }
+        let squareNum2 = numbers.map(squareAll);
+        console.log(squareNum2);
+
+        // declare call back outside: arrow funtion
+        console.log(`call with map type-3`)
+        let squareAll2 = item => item * item;
+        let squareNum3 = numbers.map(squareAll2);
+        console.log(squareNum3);
+
+        // arrow function inside 
+        console.log(`call with map type-4`)
+        let squareNum4 = numbers.map(item => item * item);
+        console.log(squareNum4);
+
+        // Array Destructing
+        console.log(`* Array Destruction: `)
+        let fruits = ["Apple", "Orrange", "Mango"];
+        let [fruit1, fruit2, fruit3, fruit4] = fruits;
+        console.log(fruit1, fruit2, fruit3, fruit4);
+
+        // variable swap
+        console.log(`* variable swap: `)
+        let m = 20;
+        let n = 70;
+        console.log(`m = ${m}, n = ${n}`);
+        // temp = m;
+        // m = n;
+        // n = temp;
+        [m, n] = [n, m];
+        console.log(`m = ${m}, n = ${n}`);
+
+        // Object Destructing
+        let person = {
+                firstName: "Sazzad",
+                lastName: "Saju",
+                age: 26
+            }
+            /* let fname = person.firstName;
+             let lname = person.lastName;
+             let age = person.age;
+             console.log(fname, lname, age); */
+        console.log(`Object destruct-01`);
+        let {
+            firstName: fname,
+            lastName,
+            age
+        } = person;
+        console.log(fname, lastName, age);
+        console.log(`Object destruct-02`);
+
+        function display({
+            firstName: fname,
+            lastName,
+            age
+        }) {
+            console.log(fname, lastName, age);
+        }
+        display(person);
+
+        // Spread Operator
+        console.log(`*Spread Operator: `)
+        console.log(`SO ex-1: `)
+        let str = "Sazzad";
+        let newStr = [...str];
+        console.log(`${str} = ${newStr}`)
+
+        console.log(`SO ex-2 `)
+        let word1 = ["Grave", "Fireflies", "Redemption"];
+        let word2 = ["Godfather", "Inception"];
+        let word3 = "Wolf";
+        let newArr = [word1, word2, word3];
+        console.log(`Before Spread Operator: `);
+        console.log(newArr);
+        newArr = [...word1, ...word2, word3];
+        console.log(`After Spread Operator: `);
+        console.log(newArr);
+
+        console.log(`SO ex-3: `);
+        let movie = {
+            name: "Inception",
+            director: "Nolan"
+        }
+        console.log(`Before Spread Operator: `);
+        console.log(movie);
+        let newMovie = {
+            ...movie,
+            genra: "SciFi"
+        };
+        console.log(`After Spread Operator: `);
+        console.log(newMovie);
+
+        console.log(`SO ex-4: `);
+        let initNum = [2, -1, 14, 2];
+        console.log(`Max Number: ${Math.max(...initNum)}`);
+
+        console.log(`SO ex-5: `);
+        let FullName = ["Sazzad", "Saju"];
+        let test = (fname, lname) => {
+            console.log(`Hello ${fname} ${lname}`);
+        }
+        test(...FullName)
+
+        // Rest operator
+        console.log(`* Rest Operator: `);
+        console.log(`RO ex-1: `)
+        let randomWord1 = ['Metalica', 'Scorpion', 'Maroon', 'Pink Floid'];
+        var [first, second] = randomWord1;
+        console.log(`randomWord1 = ${randomWord1}`)
+        console.log(`Before: `);
+        console.log(first, second);
+        var [first, ...second] = randomWord1;
+        console.log(`After: `);
+        console.log(first, second);
+
+        console.log(`RO ex-2: `)
+        let randomObj = {
+            mostFav: "Unforgiven",
+            lestFav: "Sway",
+            random: "Let Me down",
+            another: "Lonly day"
+        }
+        console.log(randomObj);
+        console.log(`Before RO: `);
+        var {
+            mostFav,
+            lestFav
+        } = randomObj;
+        console.log(mostFav, lestFav);
+        var {
+            mostFav,
+            ...lestFav
+        } = randomObj;
+        console.log(`After RO: `)
+        console.log(mostFav, lestFav);
+
+        console.log(`RO ex-3: `);
+        console.log(`Before RO: `);
+        var test2 = (nm, rst) => {
+            console.log(nm, rst);
+        }
+        test2("Saju", 45, 67, 71);
+        console.log(`After RO: `);
+        var test2 = (nm, ...rst) => {
+            console.log(nm, rst);
+        }
+        test2("Saju", 45, 67, 71);
+
+        console.log(`Exception: `);
+        console.log(`Before: `)
+        newArry = [45, 67, 71];
+        test2("Saju", newArry);
+        console.log(`After: `);
+        test2("Saju", ...newArry);
+
+        // Symbol
+        console.log(`* Symbol: `);
+        let sym1 = Symbol();
+        let sym2 = Symbol();
+        console.log(`Symbol() == Symbol() is ${sym1 == sym2}`);
+
+        console.log(`Symbol in object: `)
+        let symClass = {
+            name: "sazzad",
+            age: "25",
+            [sym1]: "Hello"
+        }
+        console.log(symClass);
+        console.log(`Property: ${Object.getOwnPropertyNames(symClass)} and Symbol: `);
+        console.log(Object.getOwnPropertySymbols(symClass));
+
+
+        // Iterator
+        console.log(`* Iterator: `);
+        console.log(`String Iterator (2): `)
+        let iterable = "Hello World";
+        var iter = iterable[Symbol.iterator]();
+        console.log(iter.next());
+        console.log(iter.next().value);
+
+        // custom iterator
+        console.log(`Custom Iterator (2): `)
+        let people;
+
+        function customIterator() {
+            let i = 0;
+            return {
+                next: function() {
+                    return i < people.length ? {
+                        value: people[i++],
+                        done: false
+                    } : {
+                        done: true
+                    };
+                }
+            }
+        }
+        people = ["Shanta", "Anamika", "Borsha", "Biddhut"]
+        var iter = customIterator(people);
+        console.log(iter.next());
+        console.log(iter.next().value);
+
+        // Generator 
+        console.log(`* Generator: `);
+
+        function* genFun() {
+            console.log("First Iteration: 1 lines");
+            yield 1; //first done
+            console.log("Second Iteration: line-1")
+            console.log("Second Iteration: line-2 and: ")
+            yield "Jahid"; //second done
+            yield "Ony";
+            yield "Sabbir";
+        }
+        let genIter = genFun();
+        console.log(genIter.next());
+        console.log(genIter.next().value);
+
+        //Promises
+        console.log(`* Promises: `);
+        let prom = new Promise((resolve, reject) => {
+            let a = 1 + 1; //some code
+            if (a == 2) {
+                resolve('Success');
+            } else {
+                reject('Failed');
+            }
+        })
+        console.log(prom);
+        prom.then((message) => {
+            console.log("Promises: This is from then- " + message);
+        }).catch((message) => {
+            console.log("Promises: This is from catch- " + message);
+        })
+        console.log("After Promises");
+
+        // async
+        console.log(`* async`)
+
+        async function getJokes() {
+            let response = await fetch('http://api.icndb.com/jokes/random');
+            let data = await response.json();
+            return data;
+        }
+
+        getJokes().then(jokes => {
+            console.log(`async: ${jokes.value.joke}`);
+        })
+
+        console.log(`* SET`);
+        let mySet = new Set([2, 1, 2, 4]);
+        console.log(`2 is duplicate [2,1,2,4] = `);
+        console.log(mySet);
+        mySet.add("Hello");
+        console.log(`Add new Item: `);
+        console.log(mySet);
+        mySet.delete(4);
+        console.log(`Delete an Item: `);
+        console.log(mySet);
+        console.log(`mySet.has(2) = ${mySet.has(2)}`)
+        console.log(`mySet.size = ${mySet.size}`);
+        console.log(`General Iteration: `);
+        for (x of mySet) {
+            console.log(x);
+        }
+        console.log(`Set Iterator: `);
+        let it = mySet.entries();
+        console.log(it);
+        console.log(it.next());
+        console.log(it.next().value[1])
+        console.log(`forEach Iteraton: `);
+        mySet.forEach(values => {
+            console.log(values)
+        });
+        console.log(`Clear: `);
+        mySet.clear();
+        console.log(mySet);
+
+        // map 
+        console.log(`* Map: `)
+        let myMap = new Map(
+            [
+                ['first key', 30],
+                ['second key', 'Saju']
+            ]
+        );
+        console.log(myMap);
+        console.log(`myMap.set(): `);
+        myMap.set('third key', 'love');
+        console.log(myMap);
+        console.log(`myMap.get(): `);
+        console.log(myMap.get('first key'));
+        console.log(`myMap.has(): `);
+        console.log(myMap.has('first key'));
+        console.log(`myMap.size = ${myMap.size}`);
+        console.log(`1. for of Iteration: `)
+        for (let [x, y] of myMap) {
+            console.log(x, y);
+        }
+        console.log(`2. keys(): `);
+        for (let x of myMap.keys()) {
+            console.log(x);
+        }
+        console.log(`3. values(): `)
+        for (let x of myMap.values()) {
+            console.log(x);
+        }
+        console.log(`4. entries(): `)
+        for (let x of myMap.entries()) {
+            console.log(x);
+        }
+        console.log(`5. forEach(): `);
+        myMap.forEach((x, y) => { //or forEach((values) => just value)
+            console.log(x, y);
+        })
+        console.log(`6. Array.from(): `);
+        let mapArr = Array.from(myMap.values());
+        console.log(mapArr);
+
+        console.log(`** Program ENDS **`);
+    </script>
+</body>
+
+</html>

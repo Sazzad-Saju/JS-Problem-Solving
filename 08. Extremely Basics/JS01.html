@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS01-Struct</title>
+</head>
+
+<body>
+    <h1 id="id1"></h1>
+    <h3 id="id2"></h3>
+    <script>
+        // write
+        document.write(0);
+        document.write('. Document write');
+        document.write(' Document end');
+        // num with 0
+        console.log("1. num with 0");
+        var num = 017;
+        console.log("017: " + num);
+        var num = 1724321880;
+        console.log("1724321880: " + num);
+        // assignment
+        console.log("2. assignment");
+        var a = 20;
+        b = a;
+        console.log("a: " + a);
+        console.log("b: " + b);
+        a = 31;
+        console.log("a: " + a);
+        console.log("b: " + b);
+        // InnerHTML, getElementById
+        document.getElementById("id1").innerHTML = "3. GetElementByID + ";
+        document.getElementById("id2").innerHTML = "InnerHTML";
+        // pre-Increment, post-Increment
+        console.log("4. PreIncrement, PostIncrement: ")
+        var a = 5;
+        var c, d;
+        c = a++;
+        console.log("c: " + c);
+        console.log("a: " + a);
+        d = ++a;
+        console.log("d: " + d);
+        // string concatenation
+        console.log("5. String Operation: ")
+        var str1 = "Hello",
+            str2 = 43,
+            str3 = 7;
+        var result = str1 + str2 + str3;
+        console.log(`${str1}+${str2}+${str3} = ${result}`);
+        result = str2 + str3 + str1;
+        console.log(`${str2}+${str3}+${str1} = ${result}`);
+        str2 = "76", str3 = "3";
+        console.log(`${str2} - ${str3} = ${str2-str3}`);
+        console.log(`${str2} + ${str3} = ${str2+str3}`);
+        // logical conditional operation
+        console.log("6. Logical operator: ");
+        var a = (5 > 4);
+        console.log(`a = ${a}`);
+        var b = (1 == a);
+        console.log(`b = ${b}`);
+        console.log("6.Conditional Operator");
+        var a = (4 >= 2) ? "Hello" : "World";
+        console.log(a);
+        // promt, alert 
+        // var name = prompt("7. Insert Your Name: ");
+        // alert(`Your Name is ${name}`);
+        // BODMAS
+        console.log("8. BODMAS");
+        var a = 20 + 80 / 2 * 2 ** 4 * 2 - 15;
+        console.log(`BODMAS: a = ${a}`);
+        // print double qotation
+        a = "Hello \"World\" !";
+        console.log(a);
+        // Store in hex format
+        a = 0xBB;
+        console.log(a);
+        // num to hex
+        console.log("Num to Hex ");
+        a = 65;
+        var hexStr = a.toString(16);
+        console.log(hexStr);
+        // hex to num 
+        console.log("Hex to Num");
+        console.log(parseInt(hexStr, 16));
+        // string to hex
+        console.log("Str to Hex");
+
+        function toHex(str) {
+            var result = '';
+            for (var i = 0; i < str.length; i++) {
+                result += str.charCodeAt(i).toString(16);
+            }
+            return result;
+        }
+        hexStr = toHex("Saju");
+        console.log(hexStr.toUpperCase());
+        // hex to string 
+        console.log("Hex to Str");
+
+        function hex_to_ascii(str1) {
+            var hex = str1.toString();
+            var str = '';
+            for (var n = 0; n < hex.length; n += 2) {
+                str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+            }
+            return str;
+        }
+        let txt = hex_to_ascii(hexStr);
+        console.log(txt);
+        // num to str
+        console.log("num to str");
+        var num = 1234;
+        num = num.toString();
+        num = num + "String"
+        console.log(num);
+        // num to binary
+        console.log("num to Binary");
+        num = 5;
+        console.log(num.toString(2));
+        // fixed after floating point
+        console.log("fixed after floating point");
+        num = 3.141592653589793;
+        console.log(num.toFixed(3));
+        console.log(num.toPrecision(3));
+        // str to num
+        console.log("Str to Num");
+        console.log(parseInt(num));
+        console.log(parseFloat(num));
+        console.log(parseFloat(num.toFixed(4)));
+        // check if not a num
+        console.log("check if not a num");
+        num = "3.1415";
+        console.log(isNaN(num));
+        num = 3.1415;
+        console.log(isNaN(num));
+        num = "3.1415x";
+        console.log(isNaN(num));
+        // print double qutation
+        console.log("dbl quot, tab, n-line")
+        console.log('"Hello" \tPrint Tab\nNew Line');
+        console.log("\"World\"");
+        // string length
+        console.log("str-length");
+        var str = "Sazzad";
+        console.log(str.length);
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        console.log("string trim");
+        str = "    Hajee Danesh    ";
+        console.log(str.length);
+        str = str.trim();
+        console.log(str.length);
+        str = "    Hajee    Danesh    ";
+        console.log(str.length);
+        str = str.trim();
+        console.log(str.length);
+        // slice
+        console.log("* slice()");
+        str = "Bornomala Cipher";
+        console.log(str);
+        console.log(str.slice(5, 9));
+        console.log(str.slice(-6, str.length));
+        console.log(str.slice(5));
+        console.log(str.slice(-6));
+        // substr 
+        console.log("* substr()");
+        console.log(str.substr(5, 4));
+        console.log(str.substr(10));
+        // replace
+        console.log("* replace()");
+        var s0 = "mala";
+        var s1 = s0.replace("al", "in");
+        console.log(s1);
+        s1 = s0.replace("ala", "inar");
+        console.log(s1);
+        // concat
+        console.log("concat()");
+        str = "Str";
+        s0 = "S0";
+        var temp = str.concat(s0, "New", "New2");
+        console.log(temp);
+        console.log("Boolean()");
+        var x = 10 / 's';
+        console.log("x = " + x);
+        console.log(Boolean(x));
+        x = 10 / 0;
+        console.log("x = " + x);
+        console.log(Boolean(x));
+        console.log("Array");
+        var countries = ["BD", "USA", "UK"];
+        console.log(countries);
+        countries[countries.length] = "RU";
+        console.log(countries);
+        countries.push("JP", "CN");
+        console.log("push: " + countries);
+        countries.pop();
+        console.log("pop: " + countries);
+        countries.shift();
+        console.log("shift: " + countries);
+        countries.unshift("DE");
+        console.log("unshift: " + countries);
+        console.log("str to arr: ");
+        var str = "far-cry";
+        var x = str.split("");
+        console.log(x);
+        var y = str.split();
+        console.log(y);
+        str = "far cry 4";
+        x = str.split(" ");
+        console.log(x);
+        console.log("Arr to Str");
+        x = x.toString();
+        console.log(x);
+        console.log("delete comma");
+        y = x.split(",");
+        console.log(y);
+        console.log("add space");
+        y = y.join(" ");
+        console.log(y);
+        y = ["far", "cry", "4"];
+        y = y.join();
+        console.log(y);
+        y = y.split(",");
+        console.log(y);
+        y = y.join("");
+        console.log(y);
+        // sort()
+        console.log("sort()");
+        console.log(countries);
+        console.log(countries.sort());
+        console.log(countries.reverse());
+        // Object
+        console.log("Objects");
+        var obj = {
+            name: "Epshita",
+            age: "KG"
+        };
+        console.log(obj);
+        // add new property+value
+        console.log("New/Update property");
+        obj.gender = "Female";
+        console.log(obj);
+        obj["DOB"] = "25/12/95";
+        console.log(obj);
+        console.log("Detele property");
+        delete obj.DOB;
+        console.log(obj);
+        // Complex arr obj
+        console.log("Complex Array");
+        var cxArr = [5, 3, ["s", "d"], 7];
+        console.log(cxArr);
+        console.log(cxArr[2]);
+        console.log(cxArr[2][0]);
+        cxArr = [1, 2, ["a", "b"], {
+            prop1: "a1",
+            prop2: "a2"
+        }]
+        console.log(cxArr);
+        console.log(cxArr[3]);
+        console.log(cxArr[3].prop1);
+        cxArr = ["Item1", "Item2", {
+            prop1: "a1b1",
+            prop2: [1, 2, ["a", "b"]]
+        }];
+        console.log(cxArr[2].prop2[2][0]);
+        // undefined, Null, empty value
+        console.log("undefined, Null, empty value: ")
+        let und;
+        console.log(und);
+        console.log(und == null);
+        console.log(und === null);
+        console.log("Empty:");
+        let emt = "";
+        console.log(emt);
+        console.log(emt == undefined);
+        console.log(emt == null);
+        // reference type
+        var arr = [14, 15, 94, 65, 35, 89, 79];
+        var newArr = arr;
+        arr[1] = 323;
+        console.log(arr);
+        console.log(newArr);
+
+        // end
+    </script>
+</body>
+
+</html>

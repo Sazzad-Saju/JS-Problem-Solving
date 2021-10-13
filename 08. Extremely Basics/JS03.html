@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS03-Struct</title>
+</head>
+
+<body>
+    <!-- Last part DOM -->
+    <div class="container">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+        />
+    </div>
+</body>
+<script>
+    // General Functon
+    console.log("**General Function**")
+
+    function gen_fun() {
+        console.log("This is General Function");
+    }
+    gen_fun();
+    // function expression
+    console.log("**Function Expression**")
+
+    let fun_expression = function() {
+        console.log("This is Function Expression")
+    }
+    fun_expression();
+
+    // arrow function
+    console.log("**Arrow Function**");
+    let arrow_fun1 = () => {
+        console.log("Arrow Function-01");
+    }
+    arrow_fun1();
+
+    let arrow_fun2 = (x, y) => {
+        console.log(`Arrow Function-02: ${x} * ${y} = ${x*y}`);
+    }
+    arrow_fun2(4, 5);
+    let arrow_fun3 = x => {
+        console.log(`Arrow Function-03: ${x}^2 = ${x*x}`);
+    }
+    arrow_fun3(5);
+
+    // ForEach
+    console.log("**ForEach**")
+    console.log("ForEach: 01")
+    var arrCity = ["Dhaka", "Kishoregonj", "Dinajpur", "Tangail"];
+    arrCity.forEach(function(item, i, ara) {
+        console.log(`index ${i}, item ${item}`);
+    })
+    console.log("ForEach: 02");
+    var arr = ['Anamika', 'Shanta', 'Epshita'];
+    let printName = function(x) {
+        console.log(`Name: ${x}`)
+    }
+    arr.forEach(printName);
+    // Mapping
+    console.log("**Mapping**");
+
+    function addSome(item) {
+        return (`${item} is a city`);
+    }
+    let mapCity = arrCity.map(addSome);
+    console.log(mapCity);
+    // map ex-2
+    console.log("map ex-2");
+    var arr2 = [8, 7, 6, 5, 4, 3, 2, 1];
+
+    function map_square(item) {
+        return item * item;
+    }
+    let squarearr = arr2.map(map_square);
+    console.log(squarearr);
+
+    //object method
+    console.log("Object Method");
+    var person = {
+        firstName: "Sazzad",
+        lastName: "Saju",
+        dob: "18-11-1994",
+        fullName: function() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+    console.log(person.fullName());
+
+    // Math Object
+    console.log("**Math Object**");
+    console.log("PI: " + Math.PI);
+    console.log("e: " + Math.E);
+    console.log(`round: 3.5 =  ${Math.round(3.5)}`);
+    console.log(`ceil: 3.2 = ${Math.ceil(3.2)}`);
+    console.log(`floor: 3.6 = ${Math.floor(3.6)}`);
+    console.log(`root: 81 = ${Math.sqrt(81)}`);
+    console.log(`absolute: -9 = ${Math.abs(-9)}`);
+    console.log(`power 2^3 = ${Math.pow(2,3)}`);
+    console.log(`min value [7,5,3,9,4] = ${Math.min(7,5,3,9,4)}`);
+    var arr = [7, 5, 3, 9, 4];
+    console.log(`Min From Array: ${Math.min.apply(Math, arr)}`);
+    console.log(`Max From Array: ${Math.max.apply(Math, arr)}`);
+    console.log(`Random Number: ${Math.random()}`);
+    console.log(`Random Number [1-100] : ${Math.round(Math.random()*100 +1)}`);
+    // Data object
+    console.log("**Date Object**");
+    let today = new Date();
+    console.log(`Current Date: ${today}`);
+    console.log(`Old Date: ${new Date('November 18 1994')}`);
+    console.log(`Month: ${today.getMonth() + 1}`);
+    console.log(`Date: ${today.getDate()}`);
+    console.log(`Day: ${today.getDay()}`);
+    console.log(`Year: ${today.getFullYear()}`);
+    console.log(`Hour: ${today.getHours()}`);
+    console.log(`Minutes: ${today.getMinutes()}`);
+    console.log(`Seconds: ${today.getSeconds()}`);
+    console.log(`Miliseconds: ${today.getMilliseconds()}`);
+    console.log(`Timestamp: ${today.getTime()}`);
+    today = new Date();
+    today.setMonth(0);
+    console.log(`Set Month: ${today}`);
+    today.setDate(15);
+    console.log(`Set Date: ${today}`);
+    // Global, Local
+    console.log("**lobar Scope vs Local Scope**")
+        // global scope
+    var a = 1;
+    let b = 2;
+    const c = 3;
+    console.log(`Global scope`, a, b, c);
+    if (true) {
+        var a = 7; //exception
+        let b = 8;
+        const c = 9;
+        console.log(`if scope`, a, b, c);
+    }
+    console.log(`Global scope`, a, b, c);
+    console.log("For Scope")
+    for (var a = 0; a < 10; a++) {
+        // a also increasing in GS
+    }
+    console.log(`Global scope`, a, b, c);
+    // Class (first 2 objects, then class to create obj)
+    console.log("**Class**");
+    // object1
+    console.log("Object1:");
+    let person1 = {
+        firstName: "Sazzad",
+        lastName: "Saju",
+        join: function() {
+            console.log(`${this.firstName} ${this.lastName}`);
+        }
+    }
+    person1.join();
+    // object2
+    console.log("Object2:");
+    let person2 = {
+        firstName: "Epshita",
+        lastName: "Niddho",
+        join: function() {
+            console.log(`${this.firstName} ${this.lastName}`);
+        }
+    }
+    person2.join();
+    console.log("Class:");
+    class Person {
+        constructor(fname, lname) {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.join = function() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+    }
+    var person3 = new Person("Hanif", "Sonket");
+    console.log(`Class Object3: ${person3.join()}`);
+    var person4 = new Person("Christopher", "Nolan");
+    console.log(`Class Object4: ${person4.join()}`);
+    // calculate age
+    console.log("**Calculate Age**");
+    class Age {
+        constructor(birthDate) {
+            this.dob = birthDate;
+        }
+        calculateAge() {
+            let dateOfBirth = new Date(this.dob);
+            let diff = Date.now() - dateOfBirth.getTime();
+            let tempDate = new Date(diff);
+            return Math.abs(tempDate.getUTCFullYear() - 1970);
+        }
+    }
+    // var Age1 = new Age("11-18-1994");
+    var Age1 = new Age("November 18 1994");
+    console.log(Age1.calculateAge());
+
+    // Inheritence
+    console.log("**Inheritance**")
+    class Mammal {
+        constructor(name) {
+            this.name = name;
+        }
+        eats() {
+            return `${this.name} eats foods.`;
+        }
+    }
+    class Dog extends Mammal {
+        constructor(name, owner) {
+            super(name);
+            this.owner = owner;
+        }
+        eats() {
+            return `${this.name} eats chicken.`;
+        }
+        static behav() {
+            return `${this.name} seldom bites`;
+        }
+    }
+    var M1 = new Mammal('Human');
+    console.log(M1.eats());
+    var d1 = new Dog('puffy', 'pintu');
+    console.log(d1.eats());
+    console.log("static: " + Dog.behav());
+
+    // ---END---
+</script>
+
+</html>

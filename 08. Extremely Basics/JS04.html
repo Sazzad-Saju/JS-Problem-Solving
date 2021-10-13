@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>JS04-DOM</title>
+    <style>
+        form {
+            /* padding-left: 20px; */
+            padding-top: 20px;
+            padding-bottom: 20px;
+            /* padding: 20px; */
+            text-align: center;
+        }
+        
+        #kup {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 id="heading" class="noClass yesClass">H3: Some Random HTML Contents</h3>
+        <h5 class="noClass">Same Class H5 Tag</h5>
+        <h6 id="t1">Title Number One</h6>
+        <h6 id="t2">Title Number Two</h6>
+        <h6 id="t3">Title Number Three</h6>
+        <div id="sec">
+            <h6 id="t4">Title Number Four</h6>
+            <h6 id="t5">Title Number Five</h6>
+        </div>
+        <!-- <h6 id="t3">Title Number Three</h6> -->
+        <ol>
+            <li>Schindler List</li>
+            <li>Lighthouse</li>
+            <li>Heraditory</li>
+            <li>Fight Club</li>
+        </ol>
+        <hr>
+        <ul>
+            <!-- <li>
+                <a href="https://google.com">Google</a></li> -->
+            <li>
+                <a href="https://google.com">Google</a></li>
+            <li>
+                <a href="https://facebook.com">Facebook</a></li>
+            <li>
+                <a href="https://linkedin.com">LinkedIn</a></li>
+            <li>
+                <a href="https://twitter.com" class="SomeClass MoreClass">Twitter</a></li>
+
+        </ul>
+        <hr>
+        <h3>My Form</h3>
+        <form action="insert.php" method="POST">
+            <label class="lbl" for="Name">User name: </label>
+            <input type="text" id="foc">
+            <label class="lbl" for="Password">Password: </label>
+            <input type="password">
+        </form>
+
+        <p id="kup">
+            KeyUp:
+        </p>
+
+        <hr>
+        <a class="button button-primary" onclick="alert('Event1: onclick');console.log('Event1: onclick!')">Click</a>
+        <button onmouseover="alert('Hello'); console.log(`Event2: onmouseover`)">onmouseover</button>
+        <!-- <a class="button button-primary" onclick="message()">Console</a> -->
+        <button id="addEvLis">Add Event Listner</button>
+        <button id="dfltArg">Default Arg</button>
+    </div>
+
+    <script src="js/DOM.js"></script>
+</body>
+
+</html>

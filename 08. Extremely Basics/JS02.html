@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS02: Exercise</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .prob-sec-od {
+            background-color: lightgray;
+        }
+        
+        .prob-sec-head {
+            background-color: cornsilk;
+            display: inline-block;
+        }
+        
+        .prob-sec-eve {
+            /* background-color: darkgray; */
+            background-color: dimgray;
+            color: white;
+        }
+        
+        .head {
+            color: darkred;
+        }
+        
+        p,
+        span,
+        .big-txt {
+            font-size: 1.5rem;
+        }
+        
+        .fact-box {
+            background-color: #F0F0F0;
+            color: black;
+        }
+        
+        .fact-box-head {
+            background-color: #B64B39;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .button {
+            background-color: #c7c7c7;
+            border: 1px solid black;
+            color: black;
+            padding: 5px;
+            text-align: center;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            opacity: 1
+        }
+        
+        .boxsizingBorder {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        #factRes {
+            width: 100%;
+        }
+        
+        .inpSec input {
+            width: 60px;
+            padding: 7px;
+            font-size: 1.4rem;
+        }
+        
+        .correct {
+            border: 2px solid green;
+            color: green;
+        }
+        
+        .wrong {
+            border: 2px solid red;
+            color: red;
+        }
+        
+        .wrong:focus {
+            outline: none;
+            border: 2px solid red;
+            color: red;
+        }
+        
+        .neutral {
+            border: 2px solid black;
+            color: black;
+        }
+        
+        #totalMiss {
+            color: brown;
+            font-weight: bold;
+        }
+        
+        .rng-box {
+            background-color: #CCCCFF;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .rng-body {
+            background-color: #F0F0F0;
+            color: dimgrey;
+            border: 4px solid #CCCCFF;
+            outline: none;
+        }
+        
+        .smallInp {
+            width: 200px;
+            font-size: 1.4rem;
+            margin-left: 20px;
+        }
+        
+        .rng-res {
+            background-color: #CCCCFF;
+            line-height: 23px;
+        }
+        
+        small {
+            display: block;
+            font-size: 16px;
+        }
+        
+        .danger {
+            background-color: #d9534f;
+            line-height: 23px;
+            color: #F0F0F0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid prob-sec-head">
+        <h1 class="text-center head py-4">Simple Mathematical Problem Set</h1>
+    </div>
+    <!-- sum of series -->
+    <div class="container-fluid prob-sec-od">
+        <div class="container">
+            <h3 class="py-3">Exercise 01: Sum of Square Series</h3>
+            <div class="row form-group">
+                <div class="col-md-4 mb-3">
+                    <p>Enter the Number of terms: </p>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <input type="text" class="form-control" id="input">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <button class="btn btn-primary" id="goButt">GO</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="SoS"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid prob-sec-eve pb-4">
+        <div class="container">
+            <h3 class="py-3">Exercise 02: Factorials Calculator</h3>
+            <div class="row form-group d-flex justify-content-center text-center">
+                <div class="col-md-4 py-2 rounded fact-box">
+                    <div class="rounded big-txt fact-box-head"> Factorials Calculator</div>
+                    <p>
+                        n! = ?
+                    </p>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6 mw-2">
+                            <p>
+                                n =
+                                <input type="text" placeholder=" n" size="5" maxlength="6" id="factInp">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="btn button" id="factClear" style="float:left">Clear</span>
+                            <span class="btn button" id="factCal" style="float: right;">Calculate</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <textarea name="" id="factRes" rows="4" class="mt-3 mb-4" readonly placeholder=" Answer: "></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            @2021-Sazzad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Check values of PI -->
+    <div class="container-fluid prob-sec-od">
+        <div class="container">
+            <h3 class="py-3">Exercise 03: Put Values of PI that You Know</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="inpSec row form-group">
+                        <div class="text-center mb-4">
+                            <button class="btn btn-lg button" id="piSec">Click to Type</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid prob-sec-eve pb-4">
+        <div class="container">
+            <h3 class="py-3">Exercise 04: Random and Pseudorandom Number Generator</h3>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">
+                    <div class="row rng-box">
+                        <div class="col">
+                            <div class="big-txt">
+                                <i>Random Number Generator</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rng-body">
+                        <div class="row">
+                            <div class="col mt-4">
+                                <p>
+                                    <i>Min:</i>
+                                    <input type="number" class="smallInp" value="1">
+                                </p>
+                                <p> <i>Max: </i>
+                                    <input type="number" class="smallInp" value="100">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn button" id="rndGen">Generate</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col big-txt">
+                                <i>Result:</i>
+                            </div>
+                        </div>
+                        <div class="row m-auto">
+                            <div class="col big-txt text-center mb-4 pt-2" id="Random-result">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // //Exercise: sum of square series
+        document.getElementById('goButt').addEventListener('click', sumOfSeris);
+
+        function sumOfSeris() {
+            var n = parseInt(document.getElementById('input').value);
+            // console.log(n);
+            if (isNaN(n) != true) {
+                var series = "";
+                var result = 0;
+                for (var i = 1; i <= n; i++) {
+                    result += i * i;
+                    // series += i * i.toString();
+                    series += `${i}<sup>2</sup>`;
+                    if (i == n) {
+                        continue;
+                    }
+                    series += " + ";
+                }
+                // console.log(`${series} = ${result}`);
+                document.getElementById('SoS').innerHTML = `
+                Results: ${series} = ${result}
+                `
+            } else {
+                document.getElementById('SoS').innerHTML = "";
+            }
+        }
+        // factorial
+        // at most 170 input
+        document.getElementById('factCal').addEventListener('click', calculate);
+
+        function calculate() {
+            var n = parseInt(document.getElementById('factInp').value);
+            // console.log(n);
+            if (isNaN(n) != true) {
+                var i = 1;
+                var factorial = 1;
+                while (i <= n) {
+                    factorial *= i;
+                    i++;
+                }
+                // console.log(factorial);
+                // document.getElementById('factRes').parentElement.innerHTML = `
+                //  Answer: 
+                //  <p class = "text-center" id="">${factorial}</p>
+                // `
+                // remove scientific notation
+                /*factorial = factorial.toLocaleString('fullwide', {
+                    useGrouping: false
+                });*/
+                factorial = BigInt(factorial).toString();
+                document.getElementById('factRes').value = factorial;
+            }
+        }
+        document.getElementById('factClear').addEventListener('click', function() {
+            document.getElementById('factRes').value = "";
+            document.getElementById('factInp').value = "";
+        });
+
+        // Check values of PI sec
+        document.getElementById('piSec').addEventListener('click', openPiSec);
+
+        // function loading() {
+
+        //     setTimeout(openPiSec, 3000);
+        // }
+
+        function openPiSec(e) {
+            // e.target.
+            // console.log(e.target.parentElement)
+            e.target.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+            `
+            setTimeout(function() {
+                var insertionSec = e.target.parentElement;
+                insertionSec.innerHTML = `
+            <div class="col my-4 text-center" id="insertedSec">
+            `
+                for (i = 0; i < 173; i++) {
+                    insertionSec.innerHTML += `
+                <input type="text" maxlength="1" class="text-center mx-3 mb-2 rounded">
+                `
+                }
+                insertionSec.innerHTML += `</div> <div class="mt-3"><small class="text-muted"> Note: Don't Press TAB</small> <br> <small id = "totalMiss">Misstake: 0</small></div>`;
+                // var chi = document.querySelector("#insertedSec").child;
+                var inp = document.querySelectorAll('input')[2];
+                inp.value = 3;
+                // inp1.setAttribute('readonly', true);
+                inp.setAttribute('disabled', true);
+
+                inp = document.querySelectorAll('input')[3];
+                inp.value = ".";
+                inp.setAttribute('disabled', true);
+                inp = document.querySelectorAll('input')[4];
+                inp.value = "1";
+                inp.setAttribute('disabled', true);
+                inp = document.querySelectorAll('input')[5];
+                inp.value = "4";
+                inp.setAttribute('disabled', true);
+                inp = document.querySelectorAll('input')[6];
+                inp.focus();
+            }, 2000);
+        }
+        var ind = 0;
+        var tMistake = 0;
+        var container = document.getElementsByClassName("inpSec")[0];
+        container.onkeyup = function(e) {
+                var target = e.srcElement || e.target;
+                var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+                var myLength = target.value.length;
+                var PiVal = "159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852";
+                if (myLength >= maxLength) {
+                    var next = target;
+                    while (next = next.nextElementSibling) {
+                        if (next == null)
+                            break;
+                        if (next.tagName.toLowerCase() === "input") {
+                            if (PiVal[ind] == target.value) {
+                                // target.setAttribute("class", "correct");
+                                // target.classList.add("correct");
+                                target.className = "text-center mx-3 mb-2 rounded correct";
+                                next.focus();
+                                ind++;
+                                break;
+                            } else {
+                                // target.classList.add("wrong");
+                                target.className = "text-center mx-3 mb-2 rounded wrong";
+                                tMistake++;
+                                document.getElementById('totalMiss').innerHTML = `
+                            <small id = "totalMiss">Misstake: ${tMistake}</small>
+                            `
+                                    // console.log(ind);
+                                break;
+                            }
+                        }
+                    }
+                }
+                // Move to previous field if empty (user pressed backspace)
+                else if (myLength === 0) {
+                    var previous = target;
+                    while (previous = previous.previousElementSibling) {
+                        if (previous == null)
+                            break;
+                        if (previous.tagName.toLowerCase() === "input") {
+                            if (ind > 0) {
+                                previous.focus();
+                                target.classList.add("neutral");
+                                // target.className("text-center mx-3 mb-2 rounded neutral");
+                                // console.log(target);
+                                ind--;
+                                console.log(ind);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            // random and pseudorandom number generator
+        document.querySelector('#rndGen').addEventListener('click', generate);
+
+        function generate() {
+            var min = Math.ceil(document.querySelectorAll('.smallInp')[0].value);
+            var max = Math.floor(document.querySelectorAll('.smallInp')[1].value);
+            var date = new Date()
+            today = "";
+            today += date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " ";
+            date = today + date.toString().substr(16, 15);
+            // console.log(date.substr(16, 15));
+            if (min < max) {
+                var randNum = Math.floor(Math.random() * (max - min + 1) + min);
+                // console.log(randNum);
+                var elem = document.querySelector('#Random-result');
+                elem.classList.remove('danger');
+                elem.classList.add('rng-res');
+
+                elem.innerHTML = `<b>${randNum}</b>
+                                <p>
+                                    <small>Min: ${min}, Max: ${max}</small>
+                                    <small>${date}</small>
+                                </p>`
+            } else {
+                var elem = document.querySelector('#Random-result');
+                elem.classList.remove('rng-res');
+                elem.classList.add('danger');
+                elem.innerHTML = `<b>ERROR</b>
+                                <p>
+                                    <small>Min: ${min}, Max: ${max}</small>
+                                    <small>Note: Max cannot be smaller than Min</small>
+                                </p>`
+
+            }
+        }
+    </script>
+</body>
+
+</html>

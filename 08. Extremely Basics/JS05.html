@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS05-Extra</title>
+</head>
+
+<body>
+    <!-- error Handling -->
+    <script>
+        console.log('Before Error');
+        // fun();
+        try {
+            // fun2();
+        } catch (err) {
+            console.log("Non Error Object Related Message");
+            console.log(err);
+            console.log("Error Message: " + err.message);
+            console.log("Error Type: " + err.name);
+        } finally {
+            console.log("Must Run Block");
+        }
+        console.log('After Error');
+
+        let a = 2;
+
+        try {
+            if (a > 15) throw "Too Big";
+            else if (a < 5) throw "Too Small";
+        } catch (err) {
+            console.log(err);
+        }
+    </script>
+</body>
+
+</html>
