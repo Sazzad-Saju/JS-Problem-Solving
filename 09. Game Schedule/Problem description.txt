@@ -1,0 +1,58 @@
+Link: https://codeshare.io/yovkz9
+
+Problem Name: game scheduler 
+
+Problem Description: 
+Your are given 5 dates and a list of 5 teams that play cricket.  
+Generate a scheduler such that each team play with every each other team and 
+one day a particular team play only once. That gives you a total of 10 games 
+played in 5 days with each team play 4 games.
+
+Write the program in your preferable language
+
+Input: 
+dates = ['05-12-2022', '06-12-2022', '07-12-2022', '08-12-2022', '09-12-2022']
+team = ['BD', 'AUS', 'IND', 'PAK', 'NZ']
+Probable Output: 
+[
+{'05-12-2022': 'BD-AUS' , 'IND-PAK'},
+{'06-12-2022': 'BD-NZ' , 'AUS-IND'},
+{'07-12-2022': 'PAK-NZ' , 'BD-IND'},
+{'08-12-2022': 'AUS-PAK' , 'IND-NZ'},
+{'09-12-2022': 'BD-PAK' , 'AUS-NZ'},
+]
+
+Helpers:
+code snippet js-1:
+let dates = ['12-12-12']
+games = ['BD-AUS', 'IND-PAK']
+schedule = []
+schedule.push({[dates] : games})
+console.log(schedule)
+output:
+[ { '12-12-12': [ 'BD-AUS', 'IND-PAK' ] } ]
+
+code snippet js-2:
+let dates = ['05-12-2022', '06-12-2022', '07-12-2022', '08-12-2022', '09-12-2022']
+let match = ['BD', 'AUS', 'IND', 'PAK', 'NZ']
+let totalMatch = []
+    for(let i=0; i<match.length-1; i++){
+        for(let j = i; j<match.length; j++){
+            if(i==j){
+                continue;
+            }
+            totalMatch.push(match[i]+'-'+match[j])
+        }
+    }
+console.log(totalMatch)
+output:
+[ 'BD-AUS',
+  'BD-IND',
+  'BD-PAK',
+  'BD-NZ',
+  'AUS-IND',
+  'AUS-PAK',
+  'AUS-NZ',
+  'IND-PAK',
+  'IND-NZ',
+  'PAK-NZ' ]
