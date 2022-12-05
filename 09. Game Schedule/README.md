@@ -1,5 +1,7 @@
 # Problem Name: game scheduler 
 
+**Problem by: Sazzad-Saju**
+
 Link: https://codeshare.io/yovkz9
 
 Problem Description: 
